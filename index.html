@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>FIT IS LIFE | Her Gün Seçimini Yapıyorsun</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Grain Overlay -->
+  <div class="grain"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <div class="navbar__logo">
+        <span class="logo-fit">FIT</span><span class="logo-is-life">IS LIFE</span>
+      </div>
+      <div class="navbar__links">
+        <a href="#classes" class="nav-link">Dersler</a>
+        <a href="#timer" class="nav-link">Antrenman</a>
+        <a href="#schedule" class="nav-link">Takvim</a>
+        <a href="#instructors" class="nav-link">Eğitmenler</a>
+      </div>
+      <button class="navbar__burger" id="navBurger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero__bg" style="background-image: url('img/hero_gym.jpg');"></div>
+    <div class="hero__overlay"></div>
+    <canvas id="particleCanvas" class="hero__particles"></canvas>
+    
+    <div class="hero__content">
+      <div class="hero__overline">
+        FIT IS LIFE — STUDIO
+      </div>
+      <h1 class="hero__title">
+        <span class="hero__line"><span class="hero__word" data-text="HER GÜN">HER GÜN</span></span>
+        <span class="hero__line"><span class="hero__word hero__word--lime" data-text="SEÇİMİNİ">SEÇİMİNİ</span></span>
+        <span class="hero__line"><span class="hero__word hero__word--stroke" data-text="YAPIYORSUN">YAPIYORSUN</span></span>
+      </h1>
+      <p class="hero__subtitle">
+        Zumba'nın ateşi. Pilates'in derinliği. HIIT'in darbesi. Seninle başlıyor.
+      </p>
+      <div class="hero__ctas">
+        <a href="#classes" class="btn btn--lime btn--magnetic">Dersler →</a>
+        <a href="#timer" class="btn btn--outline btn--magnetic">Antrenmanı Başlat</a>
+      </div>
+    </div>
+
+    <!-- Circular Spinning Text -->
+    <svg class="hero__circle-text" viewBox="0 0 100 100" width="120" height="120" id="heroCircle">
+      <path id="circlePath" d="M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" fill="none" />
+      <text fill="var(--lime)" font-size="10" font-weight="900" letter-spacing="3" font-family="var(--font-head)">
+        <textPath href="#circlePath" startOffset="0%">
+          FIT IS LIFE · FIT IS LIFE · FIT IS LIFE ·
+        </textPath>
+      </text>
+    </svg>
+
+    <!-- Scroll Indicator -->
+    <div class="hero__scroll-indicator">
+      <span>KAYDIR</span>
+      <svg class="hero__scroll-arrow" width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M8 0L8 22M8 22L1 15M8 22L15 15" />
+      </svg>
+    </div>
+  </header>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrapper">
+    <div class="marquee marquee--lime">
+      <div class="marquee__track">
+        <span>ZUMBA — PİLATES — HIIT — YOGA — SPİNNİNG — VÜCUT GELİŞTİRME — BOKS — CORE — </span>
+        <span>ZUMBA — PİLATES — HIIT — YOGA — SPİNNİNG — VÜCUT GELİŞTİRME — BOKS — CORE — </span>
+      </div>
+    </div>
+    <div class="marquee marquee--dark">
+      <div class="marquee__track marquee__track--reverse">
+        <span>VÜCUDUNU DÖNÜŞTÜR · LİMİTLERİNİ AŞ · YAŞAM İÇİN FİTNESS · HER GÜN SAVAŞ · </span>
+        <span>VÜCUDUNU DÖNÜŞTÜR · LİMİTLERİNİ AŞ · YAŞAM İÇİN FİTNESS · HER GÜN SAVAŞ · </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLASSES -->
+  <section class="section classes-section has-bg" id="classes">
+    <div class="section__bg" style="background-image: url('img/bg_classes.jpg'); opacity: 0.1;"></div>
+    <div class="section__overlay"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">DERSLER</span>
+        <h2 class="section-title">Her Hedefe<br><em class="lime-em flicker-em">Bir PROGRAM</em></h2>
+      </div>
+
+      <div class="filter-tabs reveal" data-delay="100">
+        <button class="filter-tab active" data-filter="all">Tümü</button>
+        <button class="filter-tab" data-filter="cardio">Kardiyo</button>
+        <button class="filter-tab" data-filter="strength">Güç</button>
+        <button class="filter-tab" data-filter="mindful">Zihin & Vücut</button>
+        <button class="filter-tab" data-filter="dance">Dans</button>
+      </div>
+
+      <div class="classes-grid">
+        <!-- Zumba -->
+        <div class="class-card reveal" data-category="dance cardio">
+          <div class="class-card__img-wrapper">
+            <img src="img/zumba.jpg" alt="Zumba" class="class-card__img">
+            <div class="class-card__overlay"></div>
+          </div>
+          <div class="class-card__body">
+            <div class="class-card__top">
+              <span class="class-card__icon">💃</span>
+              <span class="class-card__badge badge--orange">DANS / KARDİYO</span>
+            </div>
+            <h3 class="class-card__name">ZUMBA</h3>
+            <p class="class-card__desc">Latin ritimleriyle enerjiyi hisset. Eğlenirken kalori yakmanın en ateşli yolu.</p>
+            <div class="class-card__meta">
+              <div class="meta-item">⏱ 45 dk</div>
+              <div class="meta-item">🔥 450 kcal</div>
+            </div>
+            <div class="class-card__level">
+              <div class="level-dot active"></div><div class="level-dot active"></div><div class="level-dot active"></div>
+              <span class="level-label">TÜM SEVİYELER</span>
+            </div>
+            <a href="#schedule" class="btn btn--lime btn--card" style="text-decoration: none; text-align: center;">Rezerve Et</a>
+          </div>
+        </div>
+
+        <!-- Pilates -->
+        <div class="class-card reveal" data-delay="100" data-category="mindful">
+          <div class="class-card__img-wrapper">
+            <img src="img/pilates.jpg" alt="Pilates" class="class-card__img">
+            <div class="class-card__overlay"></div>
+          </div>
+          <div class="class-card__body">
+            <div class="class-card__top">
+              <span class="class-card__icon">🧘‍♀️</span>
+              <span class="class-card__badge badge--lime">ZİHİN & VÜCUT</span>
+            </div>
+            <h3 class="class-card__name">PİLATES</h3>
+            <p class="class-card__desc">Core kaslarını güçlendir, esnekliğini artır. Kontrollü hareketlerle duruşunu düzelt.</p>
+            <div class="class-card__meta">
+              <div class="meta-item">⏱ 50 dk</div>
+              <div class="meta-item">🔥 250 kcal</div>
+            </div>
+            <div class="class-card__level">
+              <div class="level-dot active"></div><div class="level-dot active"></div><div class="level-dot"></div>
+              <span class="level-label">BAŞLANGIÇ/ORTA</span>
+            </div>
+            <a href="#schedule" class="btn btn--lime btn--card" style="text-decoration: none; text-align: center;">Rezerve Et</a>
+          </div>
+        </div>
+
+        <!-- HIIT -->
+        <div class="class-card reveal" data-delay="200" data-category="cardio strength">
+          <div class="class-card__img-wrapper">
+            <img src="img/hiit.jpg" alt="HIIT" class="class-card__img">
+            <div class="class-card__overlay"></div>
+          </div>
+          <div class="class-card__body">
+            <div class="class-card__top">
+              <span class="class-card__icon">⚡</span>
+              <span class="class-card__badge badge--red">KARDİYO / GÜÇ</span>
+            </div>
+            <h3 class="class-card__name">HIIT</h3>
+            <p class="class-card__desc">Yüksek yoğunluklu aralıklı antrenman. Sınırlarını zorla, metabolizmanı ateşe ver.</p>
+            <div class="class-card__meta">
+              <div class="meta-item">⏱ 30 dk</div>
+              <div class="meta-item">🔥 500 kcal</div>
+            </div>
+            <div class="class-card__level">
+              <div class="level-dot active"></div><div class="level-dot active"></div><div class="level-dot active"></div>
+              <span class="level-label">İLERİ</span>
+            </div>
+            <a href="#schedule" class="btn btn--lime btn--card" style="text-decoration: none; text-align: center;">Rezerve Et</a>
+          </div>
+        </div>
+
+        <!-- Yoga -->
+        <div class="class-card reveal" data-category="mindful">
+          <div class="class-card__img-wrapper">
+            <img src="img/yoga.jpg" alt="Yoga" class="class-card__img">
+            <div class="class-card__overlay"></div>
+          </div>
+          <div class="class-card__body">
+            <div class="class-card__top">
+              <span class="class-card__icon">🌿</span>
+              <span class="class-card__badge badge--lime">ZİHİN & VÜCUT</span>
+            </div>
+            <h3 class="class-card__name">YOGA</h3>
+            <p class="class-card__desc">Nefes, denge, huzur. Zihin ve bedenin mükemmel uyumu ile içsel güce ulaş.</p>
+            <div class="class-card__meta">
+              <div class="meta-item">⏱ 60 dk</div>
+              <div class="meta-item">🔥 200 kcal</div>
+            </div>
+            <div class="class-card__level">
+              <div class="level-dot active"></div><div class="level-dot active"></div><div class="level-dot active"></div>
+              <span class="level-label">TÜM SEVİYELER</span>
+            </div>
+            <a href="#schedule" class="btn btn--lime btn--card" style="text-decoration: none; text-align: center;">Rezerve Et</a>
+          </div>
+        </div>
+
+        <!-- Spinning -->
+        <div class="class-card reveal" data-delay="100" data-category="cardio">
+          <div class="class-card__img-wrapper">
+            <img src="img/spinning.jpg" alt="Spinning" class="class-card__img">
+            <div class="class-card__overlay"></div>
+          </div>
+          <div class="class-card__body">
+            <div class="class-card__top">
+              <span class="class-card__icon">🚴</span>
+              <span class="class-card__badge badge--orange">KARDİYO</span>
+            </div>
+            <h3 class="class-card__name">SPİNNİNG</h3>
+            <p class="class-card__desc">Müziğin ritmiyle pedal çevir. Dayanıklılığını ve kardiyo kapasiteni maksimize et.</p>
+            <div class="class-card__meta">
+              <div class="meta-item">⏱ 45 dk</div>
+              <div class="meta-item">🔥 520 kcal</div>
+            </div>
+            <div class="class-card__level">
+              <div class="level-dot active"></div><div class="level-dot active"></div><div class="level-dot"></div>
+              <span class="level-label">ORTA</span>
+            </div>
+            <a href="#schedule" class="btn btn--lime btn--card" style="text-decoration: none; text-align: center;">Rezerve Et</a>
+          </div>
+        </div>
+
+        <!-- Vücut Geliştirme -->
+        <div class="class-card reveal" data-delay="200" data-category="strength">
+          <div class="class-card__img-wrapper">
+            <img src="img/vucut.jpg" alt="Vücut Geliştirme" class="class-card__img">
+            <div class="class-card__overlay"></div>
+          </div>
+          <div class="class-card__body">
+            <div class="class-card__top">
+              <span class="class-card__icon">💪</span>
+              <span class="class-card__badge badge--blue">GÜÇ</span>
+            </div>
+            <h3 class="class-card__name">VÜCUT GELİŞTİRME</h3>
+            <p class="class-card__desc">Ağırlık antrenmanı ile kaslarını inşa et. Programlı, disiplinli, sonuç odaklı.</p>
+            <div class="class-card__meta">
+              <div class="meta-item">⏱ 60 dk</div>
+              <div class="meta-item">🔥 400 kcal</div>
+            </div>
+            <div class="class-card__level">
+              <div class="level-dot active"></div><div class="level-dot active"></div><div class="level-dot active"></div>
+              <span class="level-label">İLERİ</span>
+            </div>
+            <a href="#schedule" class="btn btn--lime btn--card" style="text-decoration: none; text-align: center;">Rezerve Et</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMER -->
+  <section class="section timer-section has-bg" id="timer">
+    <div class="section__bg" style="background-image: url('img/bg_timer.jpg');"></div>
+    <div class="section__overlay"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">CANLI ANTRENMAN</span>
+        <h2 class="section-title">Hazır mısın?<br><em class="lime-em flicker-em">ŞİMDİ BAŞLIYORUZ</em></h2>
+      </div>
+
+      <div class="timer-layout reveal">
+        <div class="timer-picker">
+          <h3 class="timer-picker__title">Antrenman Seç</h3>
+          <ul class="workout-list">
+            <li class="workout-item active" data-workout="HIIT">
+              <div class="workout-item__info">
+                <span class="workout-item__icon">⚡</span>
+                <div>
+                  <strong>HIIT Blast</strong>
+                  <small>30s Çalışma / 10s Dinlenme (8 Tur)</small>
+                </div>
+              </div>
+              <div class="workout-item__kcal">~400 kcal</div>
+            </li>
+            <li class="workout-item" data-workout="Pilates">
+              <div class="workout-item__info">
+                <span class="workout-item__icon">🧘‍♀️</span>
+                <div>
+                  <strong>Core Pilates</strong>
+                  <small>40s Çalışma / 15s Dinlenme (6 Tur)</small>
+                </div>
+              </div>
+              <div class="workout-item__kcal">~200 kcal</div>
+            </li>
+            <li class="workout-item" data-workout="Zumba">
+              <div class="workout-item__info">
+                <span class="workout-item__icon">💃</span>
+                <div>
+                  <strong>Zumba Party</strong>
+                  <small>45s Çalışma / 15s Dinlenme (5 Tur)</small>
+                </div>
+              </div>
+              <div class="workout-item__kcal">~300 kcal</div>
+            </li>
+            <li class="workout-item" data-workout="Güç">
+              <div class="workout-item__info">
+                <span class="workout-item__icon">💪</span>
+                <div>
+                  <strong>Güç İleri</strong>
+                  <small>45s Çalışma / 20s Dinlenme (5 Tur)</small>
+                </div>
+              </div>
+              <div class="workout-item__kcal">~350 kcal</div>
+            </li>
+            <li class="workout-item" data-workout="Yoga">
+              <div class="workout-item__info">
+                <span class="workout-item__icon">🌿</span>
+                <div>
+                  <strong>Yoga Flow</strong>
+                  <small>30s Çalışma / 10s Dinlenme (8 Tur)</small>
+                </div>
+              </div>
+              <div class="workout-item__kcal">~150 kcal</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="timer-display">
+          <div class="timer-state-label" id="timerPhase">ÇALIŞMA</div>
+          
+          <div class="timer-ring-container">
+            <svg class="timer-ring" viewBox="0 0 240 240" width="240" height="240">
+              <circle class="timer-ring__bg" cx="120" cy="120" r="108"></circle>
+              <circle class="timer-ring__fill" id="timerRingFill" cx="120" cy="120" r="108" stroke-dasharray="678.58" stroke-dashoffset="0"></circle>
+            </svg>
+            <div class="timer-inner">
+              <div class="timer-num" id="timerNum">00:30</div>
+            </div>
+          </div>
+
+          <div class="timer-stats-row">
+            <div class="timer-stat-item">
+              <span class="timer-stat-val" id="timerRound">1/8</span>
+              <span class="timer-stat-key">Tur</span>
+            </div>
+            <div class="timer-stat-item">
+              <span class="timer-stat-val" id="timerKcal">0</span>
+              <span class="timer-stat-key">Kcal Yakıldı</span>
+            </div>
+            <div class="timer-stat-item">
+              <span class="timer-stat-val" id="timerElapsed">0:00</span>
+              <span class="timer-stat-key">Geçen Süre</span>
+            </div>
+          </div>
+
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--secondary" id="timerReset" title="Sıfırla">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            </button>
+            <button class="timer-btn timer-btn--main" id="timerPlayPause">
+              <svg class="icon-play" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
+              <svg class="icon-pause" style="display:none;" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zm8 0h4v16h-4z"/></svg>
+            </button>
+            <button class="timer-btn timer-btn--secondary" id="timerSkip" title="Geç">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4l10 8-10 8V4z"/><path d="M19 5v14"/></svg>
+            </button>
+          </div>
+          <div class="timer-hint">Başlatmak/Durdurmak için BOŞLUK tuşuna bas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="section schedule-section has-bg" id="schedule">
+    <div class="section__bg" style="background-image: url('img/bg_schedule.jpg');"></div>
+    <div class="section__overlay"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">HAFTANIN TAKVİMİ</span>
+        <h2 class="section-title">Stüdyo<br><em class="lime-em flicker-em">PROGRAMI</em></h2>
+      </div>
+
+      <div class="day-tabs reveal" data-delay="100">
+        <button class="day-tab active" data-day="pzt">
+          <span class="day-name">Pzt</span>
+          <span class="day-num">16</span>
+        </button>
+        <button class="day-tab" data-day="sal">
+          <span class="day-name">Sal</span>
+          <span class="day-num">17</span>
+        </button>
+        <button class="day-tab" data-day="car">
+          <span class="day-name">Çar</span>
+          <span class="day-num">18</span>
+        </button>
+        <button class="day-tab" data-day="per">
+          <span class="day-name">Per</span>
+          <span class="day-num">19</span>
+        </button>
+        <button class="day-tab" data-day="cum">
+          <span class="day-name">Cum</span>
+          <span class="day-num">20</span>
+        </button>
+        <button class="day-tab" data-day="cmt">
+          <span class="day-name">Cmt</span>
+          <span class="day-num">21</span>
+        </button>
+        <button class="day-tab" data-day="paz">
+          <span class="day-name">Paz</span>
+          <span class="day-num">22</span>
+        </button>
+      </div>
+
+      <div class="schedule-grid reveal" id="scheduleGrid" data-delay="200">
+        <!-- JS Dynamic Content Gets Injected Here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTRUCTORS -->
+  <section class="section instructors-section has-bg" id="instructors">
+    <div class="section__bg" style="background-image: url('img/bg_instructors.jpg'); opacity: 0.12;"></div>
+    <div class="section__overlay"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">UZMAN KADRO</span>
+        <h2 class="section-title">Sınırlarını<br><em class="lime-em flicker-em">ZORLAYACAKLAR</em></h2>
+      </div>
+
+      <div class="instructors-grid">
+        <!-- Elif -->
+        <div class="instructor-card reveal">
+          <div class="instructor-card__top">
+            <div class="instructor-card__avatar">
+              <img src="img/elif.jpg" alt="Elif Sarıkaya" class="instructor-card__img">
+            </div>
+          </div>
+          <div class="instructor-card__body">
+            <h3 class="instructor-card__name">Elif Sarıkaya</h3>
+            <div class="instructor-card__specialty">ZUMBA & DANS</div>
+            <div class="instructor-card__stars">★★★★★</div>
+            <p class="instructor-card__bio">8 yıllık profesyonel Latin dans geçmişiyle, ritmi ve enerjiyi hücrelerinize kadar hissettirir.</p>
+            <div class="instructor-card__tags">
+              <span class="tag">Enerji</span>
+              <span class="tag">Ritim</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Berk -->
+        <div class="instructor-card reveal" data-delay="100">
+          <div class="instructor-card__top">
+            <div class="instructor-card__avatar">
+              <img src="img/berk.jpg" alt="Berk Koçak" class="instructor-card__img">
+            </div>
+          </div>
+          <div class="instructor-card__body">
+            <h3 class="instructor-card__name">Berk Koçak</h3>
+            <div class="instructor-card__specialty">PİLATES & YOGA</div>
+            <div class="instructor-card__stars">★★★★★</div>
+            <p class="instructor-card__bio">Uzman fizyoterapist. Vücut postürünü düzeltme ve core rehabilitasyonu alanında bir efsane.</p>
+            <div class="instructor-card__tags">
+              <span class="tag">Postür</span>
+              <span class="tag">Nefes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Melike -->
+        <div class="instructor-card reveal" data-delay="200">
+          <div class="instructor-card__top">
+            <div class="instructor-card__avatar">
+              <img src="img/melike.jpg" alt="Melike Arslan" class="instructor-card__img">
+            </div>
+          </div>
+          <div class="instructor-card__body">
+            <h3 class="instructor-card__name">Melike Arslan</h3>
+            <div class="instructor-card__specialty">HIIT & CROSSFIT</div>
+            <div class="instructor-card__stars">★★★★★</div>
+            <p class="instructor-card__bio">Eski milli atlet. Disiplin ve yüksek yoğunluklu motivasyonla sınırlarınızı yeniden tanımlatır.</p>
+            <div class="instructor-card__tags">
+              <span class="tag">Dayanıklılık</span>
+              <span class="tag">Güç</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Can -->
+        <div class="instructor-card reveal" data-delay="300">
+          <div class="instructor-card__top">
+            <div class="instructor-card__avatar">
+              <img src="img/can.jpg" alt="Can Aydın" class="instructor-card__img">
+            </div>
+          </div>
+          <div class="instructor-card__body">
+            <h3 class="instructor-card__name">Can Aydın</h3>
+            <div class="instructor-card__specialty">VÜCUT GELİŞTİRME</div>
+            <div class="instructor-card__stars">★★★★★</div>
+            <p class="instructor-card__bio">IFBB Pro yarışmacısı. 10 yılı aşkın tecrübesiyle kas inşası ve form kazanımında uzman.</p>
+            <div class="instructor-card__tags">
+              <span class="tag">Hipertrofi</span>
+              <span class="tag">Güç</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer has-bg">
+    <div class="section__bg" style="background-image: url('img/bg_footer.jpg'); opacity: 0.12;"></div>
+    <div class="section__overlay"></div>
+    <div class="container">
+      <div class="footer__top-inner reveal">
+        <div class="footer__logo">FIT IS LIFE</div>
+        <div class="footer__nav">
+          <a href="#classes" class="footer__nav-link animated-link">Dersler</a>
+          <a href="#timer" class="footer__nav-link animated-link">Antrenman</a>
+          <a href="#schedule" class="footer__nav-link animated-link">Takvim</a>
+          <a href="#instructors" class="footer__nav-link animated-link">Eğitmenler</a>
+        </div>
+      </div>
+
+      <div class="footer__middle reveal" data-delay="100">
+        <div class="footer__cols">
+          <div class="footer__col">
+            <h4 class="footer__col-title">Dersler</h4>
+            <ul>
+              <li><a href="#classes" class="footer__link animated-link">Zumba</a></li>
+              <li><a href="#classes" class="footer__link animated-link">Pilates</a></li>
+              <li><a href="#classes" class="footer__link animated-link">HIIT</a></li>
+              <li><a href="#classes" class="footer__link animated-link">Yoga</a></li>
+              <li><a href="#classes" class="footer__link animated-link">Spinning</a></li>
+              <li><a href="#classes" class="footer__link animated-link">Vücut Geliştirme</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Studio</h4>
+            <ul>
+              <li><a href="#navbar" class="footer__link animated-link">Hakkımızda</a></li>
+              <li><a href="#instructors" class="footer__link animated-link">Eğitmenler</a></li>
+              <li><a href="#schedule" class="footer__link animated-link">Ders Takvimi</a></li>
+              <li><a href="#classes" class="footer__link animated-link">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">İletişim</h4>
+            <ul>
+              <li class="footer__contact-item">
+                <span class="animated-link">Spor Merkezi Bulvarı, No:42</span>
+              </li>
+              <li class="footer__contact-item">
+                <span class="animated-link">+90 555 000 00 00</span>
+              </li>
+              <li class="footer__contact-item">
+                <a href="mailto:info@fitislife.com" class="animated-link text-lime">info@fitislife.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marquee Footer -->
+      <div class="footer__bottom reveal" data-delay="200">
+        <div class="footer__marquee-container">
+          <div class="footer__marquee">
+            <span class="credit__name" data-text="CREATED BY ANIL METE">CREATED BY ANIL METE</span>
+            <span class="credit__name" data-text="CREATED BY ANIL METE">CREATED BY ANIL METE</span>
+            <span class="credit__name" data-text="CREATED BY ANIL METE">CREATED BY ANIL METE</span>
+            <span class="credit__name" data-text="CREATED BY ANIL METE">CREATED BY ANIL METE</span>
+            <span class="credit__name" data-text="CREATED BY ANIL METE">CREATED BY ANIL METE</span>
+          </div>
+        </div>
+        <div class="footer__copy text-center">
+          © 2026 FIT IS LIFE. TÜM HAKLARI SAKLIDIR.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
